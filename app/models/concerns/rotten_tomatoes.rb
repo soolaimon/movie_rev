@@ -17,6 +17,7 @@ module  RottenTomatoes
       @id = @obj["id"]
     end
 
+
   end
 
 end

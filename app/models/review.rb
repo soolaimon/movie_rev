@@ -3,6 +3,20 @@ class Review < ActiveRecord::Base
 
   before_create :set_rt_data
 
+  def rt_movie
+    @rt_movie ||= RottenTomatoes::MovieRequest.new(id: rt_id).obj
+  end
+
+
+  def rt_reviews
+   @rt_reviews ||= RottenTomatoes::MovieRequest.new(url: rt_movie["links"]["reviews"])
+  end
+
+  def rt_similar
+    @rt_similar ||= RottenTomatoes::MovieRequest.new(url: rt_movie["links"]["similar"])
+  end
+
+
   private
 
   def set_rt_data

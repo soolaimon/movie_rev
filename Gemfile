@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -13,6 +14,7 @@ gem 'httparty'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'pg'
+gem 'rails_12factor'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim'
 gem 'uglifier', '>= 1.3.0'

@@ -12,7 +12,7 @@ module  RottenTomatoes
       elsif params[:id]
         @obj = JSON.parse(HTTParty.get("#{BASE_URL}movies/#{params[:id]}.json?apikey=#{API_KEY}"))
       elsif params[:url]
-        @obj = JSON.parse(HTTParty.get(params[:url] + "?apikey=#{API_KEY}"))
+        @obj = JSON.parse(HTTParty.get(params[:url] + "?apikey=#{API_KEY}&page_limit=50"))
       end
       @id = @obj["id"]
     end

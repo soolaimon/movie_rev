@@ -17,13 +17,14 @@ ActiveRecord::Schema.define(version: 20150301035546) do
   enable_extension "plpgsql"
 
   create_table "reviews", force: :cascade do |t|
-    t.string   "title",                                                                                                 null: false
-    t.string   "body",                                                                                                  null: false
-    t.integer  "rt_id",      default: 0
-    t.string   "rt_img_url", default: "http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default.gif"
+    t.string   "title",             null: false
+    t.string   "body",              null: false
+    t.integer  "rt_id"
+    t.string   "rt_poster_profile"
+    t.string   "rt_poster_thumb"
     t.boolean  "fresh"
-    t.datetime "created_at",                                                                                            null: false
-    t.datetime "updated_at",                                                                                            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end

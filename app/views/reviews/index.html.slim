@@ -1,0 +1,9 @@
+h1 Reviews
+
+- @reviews.in_groups_of(12, false)do |group|
+  .row
+    - group.each do |review|
+      .col-md-1 
+        = link_to image_tag("#{review.rt_poster_thumb}"), review_path(review)
+        h5 = review.title.titleize
+        h6 = review.fresh? ? "Fresh!" : "Rotten!"

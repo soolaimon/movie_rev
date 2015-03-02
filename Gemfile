@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 
 # Use SCSS for stylesheets
-gem 'boostrap-sass'
+gem 'bootstrap-sass', '3.2.0.2'
 gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'httparty'

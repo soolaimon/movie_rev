@@ -17,6 +17,7 @@ gem 'pg'
 gem 'rails_12factor'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim'
+gem 'thin'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do

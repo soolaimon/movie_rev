@@ -19,11 +19,11 @@ class Review < ActiveRecord::Base
     @rt_similar ||= RottenTomatoes::MovieRequest.new(url: rt_movie["links"]["similar"]).obj
   end
 
-  def top_fresh_percentage
+  def adjusted_tomatometer
     total_freshness = rt_reviews.map{ |review| review["freshness"] }
     total_freshness << freshness
     fresh_reviews = total_freshness.select { |freshness| freshness if freshness == "fresh" }
-    (fresh_reviews.count.to_f / total_freshness.count.to_f) * 100
+    ((fresh_reviews.count.to_f / total_freshness.count.to_f) * 100).to_i
   end
 
   private

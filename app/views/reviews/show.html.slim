@@ -1,3 +1,8 @@
-h1 = @review.title
-= image_tag(@review.rt_poster_profile)
-article = @review.body
+h1 = @review.title.titleize
+article.jumbotron 
+  = image_tag(@review.rt_poster_profile, size: "81x121.5", class: "review-img")
+  = @review.body
+
+.highlight
+  p Adjusted Top Critic Tomatometer: #{@review.adjusted_tomatometer}%
+
